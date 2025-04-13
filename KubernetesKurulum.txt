@@ -1,0 +1,88 @@
+sudo apt update && sudo apt upgrade -y;
+sudo apt install -y curl wget apt-transport-https;
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl";
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl;
+kubectl version --client;
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64;
+sudo install minikube-linux-amd64 /usr/local/bin/minikube;
+minikube version;
+sudo apt install -y docker.io;
+sudo systemctl enable docker --now;
+sudo usermod -aG docker binam;
+newgrp docker;
+"reboot veya disconnect reconnect"
+rm minikube-linux-amd64;
+rm kubectl;
+minikube start --driver=docker;
+mkdir helloworldkube;
+cd helloworldkube;
+vim hello-world.yaml;
+
+copy paste 
+"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-world
+        image: nginxdemos/hello:plain-text
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-service
+spec:
+  selector:
+    app: hello-world
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
+"
+
+kubectl apply -f hello-world.yaml;
+kubectl get service hello-world-service;
+
+
+
+
+
+
+----------------------------------------------------------------------------
+
+"tarayıcıda görüntülemek icin"
+minikube ip;
+http://<minikube-ip>:<nodeport>;
+
+
+-----------------------------------
+
+binam@localhost:~/helloworldkube$ kubectl get service hello-world-service
+NAME                  TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+hello-world-service   NodePort   10.110.191.63   <none>        80:31817/TCP   10s
+
+------------------------------------
+
+binam@localhost:~/helloworldkube$ curl http://192.168.49.2:31817
+Server address: 10.244.0.3:80
+Server name: hello-world-f84485f7f-7c6s6
+Date: 15/Jan/2025:18:48:03 +0000
+URI: /
+Request ID: 2cd4beab492fe8c7e029226e365b38a8
+
+----------------------------------------------------------------------------
