@@ -33,4 +33,4 @@ Bu notlar, Özgür Öztürk'ün uçtan uca Kubernetes eğitimi ve diğer kaynakl
 ---
 
 
-Bu README dosyası ilerleyen versiyonlarda güncellenecektir.
+Bu README dosyası ilerleyen versiyonlarda güncellenmeyecektir. Bu README dosyası https://github.com/Dert-Ops/Docme-Ag tarafından generate edilmiştir.
