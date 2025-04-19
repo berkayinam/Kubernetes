@@ -1,12 +1,36 @@
-## kubernetes öğrenirken okuduğum ve udemy/ozgurozturk izlediğim ders notlarıdır.
-***
-```KubernetesKurulum.txt``` - dosyası full kopyala yapıştır ile Linux bir makinada sıfırdan minikube-kubernetes kurar ve çalıştırmak içindir.
-***
-```KomutlarVeNotlar``` - bu klasörde Kubernetes bileşenlerine ait notlar bulunmaktadır. Pod - deployment - Service vb...
-***
-```OrnekYaml's``` - Bazı konuları localhost'ta yamllarla tek tek deneyip test edebilmek için hazırlanmış özel yaml kubernetes dosyaları bulunmaktadır.
-***
-```DefaultTemplate.yaml``` - Kuberneteste neredeyse her obje aynı template'den çıkmaktadır. Bir yaml yazarken kullandığım template default template budur.
-***
-Özgür Öztürk 'ten aldığım uçtan uca kubernetes eğitiminin Ders notlarını kendime göre derledim. Klasör ve not biçimlerini düzenledim.
-Eğitimi tavsiye ederim ```@aytitech``` 
+## Kubernetes Öğrenme Notları v0.1.0
+
+Bu repo, Kubernetes öğrenirken Udemy/@ozgurozturk eğitimi ve diğer kaynaklardan derlenen notları içerir.
+
+**Son Güncelleme (0.1.0):**
+
+* **Commit Mesajı:** Update README.md
+* **Değişiklik Nedeni:** Otomatik versiyon güncellemesi
+* **Değişiklik Özeti:** README.md dosyası güncellendi.
+
+---
+
+**İçerik:**
+
+* **`KubernetesKurulum.txt`:** Linux bir makinada sıfırdan Minikube-Kubernetes kurulumu ve çalıştırılması için kopyala-yapıştır komut dosyası.
+* **`KomutlarVeNotlar`:** Kubernetes bileşenlerine (Pod, Deployment, Service vb.) ait notlar.
+* **`OrnekYaml's`:** Çeşitli Kubernetes konularını localhost'ta test etmek için örnek YAML dosyaları.
+* **`DefaultTemplate.yaml`:** Kubernetes objeleri oluştururken kullanılan varsayılan YAML şablonu.
+
+---
+
+Bu notlar, Özgür Öztürk'ün uçtan uca Kubernetes eğitimi ve diğer kaynaklardan derlenerek, kişisel öğrenme amacıyla düzenlenmiştir.  Eğitimi tavsiye ederim `@aytitech`.
+
+---
+
+**Versiyon Geçmişi:**
+
+| Versiyon | Değişiklikler |
+|---|---|
+| 0.1.0 | İlk sürüm |
+
+
+---
+
+
+Bu README dosyası ilerleyen versiyonlarda güncellenecektir.
